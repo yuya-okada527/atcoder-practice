@@ -1,6 +1,6 @@
 N = int(input())
 A = list(map(int, input().split()))
 
-rank = sorted(A)
+A_with_index = [(A[i], i) for i in range(N)]
 
-print(A.index(rank[-2])+1)
+print(sorted(A_with_index)[-2][1] + 1)
