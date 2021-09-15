@@ -1,0 +1,8 @@
+{
+    "[python]": {
+        "editor.tabSize": 4
+    }
+    "[ruby]": {
+        "editor.tabSize": 2
+    }
+}
