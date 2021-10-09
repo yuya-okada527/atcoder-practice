@@ -1,7 +1,7 @@
 N, M, X = map(int, input().split())
 C = []
 A = []
-for i in range(N):
+for _ in range(N):
     CA = list(map(int, input().split()))
     C.append(CA[0])
     A.append(CA[1:])
