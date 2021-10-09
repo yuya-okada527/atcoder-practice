@@ -1,5 +1,3 @@
-from math import sqrt
-
 N = int(input())
 
 nums = set()
