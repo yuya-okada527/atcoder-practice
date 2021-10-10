@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "ts-node "
+  },
+  "dependencies": {
+    "ts-node": "^10.2.1"
+  }
+}
