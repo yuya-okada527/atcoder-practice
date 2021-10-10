@@ -1,9 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "start": "ts-node "
+    "start": "ts-node"
   },
   "dependencies": {
-    "ts-node": "^10.2.1"
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.3"
   }
 }
