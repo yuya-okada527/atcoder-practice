@@ -1,5 +1,3 @@
-import pdb
-
 N = int(input())
 pool = set()
 
