@@ -1,7 +1,8 @@
 import 'dart:io';
 
 void main() {
-  f1();
+  // f1();
+  f2();
 }
 
 
@@ -12,4 +13,13 @@ void f1() {
       print(i);
     }
   }
+}
+
+void f2() {
+  String? inputStr = stdin.readLineSync();
+  if (inputStr == null) return;
+  Set<int> input = inputStr.split("").map((i) => int.parse(i)).toSet();
+  Set<int> numbers = Set.from(List<int>.generate(10, (index) => index));
+  int? ans = numbers.difference(input).first;
+  print(ans);
 }
