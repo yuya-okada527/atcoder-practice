@@ -7,3 +7,7 @@ edition = "2021"
 
 [dependencies]
 proconio = "0.3.6"
+
+[[bin]]
+name = "abc281a"
+path = "src/abc/281/a.rs"
