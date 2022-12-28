@@ -9,6 +9,10 @@ edition = "2021"
 proconio = "0.3.6"
 
 [[bin]]
+name = "abc273a"
+path = "src/abc/273/a.rs"
+
+[[bin]]
 name = "abc274a"
 path = "src/abc/274/a.rs"
 
