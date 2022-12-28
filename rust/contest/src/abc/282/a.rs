@@ -1,7 +1,5 @@
 use proconio::input;
 
-
-
 fn main() {
     let alphabet = vec![
         "A",
