@@ -1,16 +1,19 @@
 h, w = map(int, input().split())
-X = [list(map(int, input().split())) for _ in range(h)]
+X = [[0 for _ in range(w+9)] for _ in range(h+9)]
+for i in range(1, h+1):
+    line = list(map(int, input().split()))
+    for j in range(1, w+1):
+        X[i][j] = line[j]
 q = int(input())
 Q = [list(map(int, input().split())) for _ in range(q)]
 
-CUMS = [[0 for _ in range(w)] for _ in range(h)]
-for i in range(h):
-    for j in range(w):
-        if i == 0: CUMS[i][j] = X[i][j]
-        else: CUMS[i][j] = CUMS[i-1][j] + X[i][j]
+CUMS = [[0 for _ in range(w+9)] for _ in range(h+9)]
+for i in range(1, h+1):
+    for j in range(1, w+1):
+        CUMS[i][j] = CUMS[i-1][j] + X[i][j]
+for i in range(1, h+1):
+    for j in range(1, w+1):
+        CUMS[i][j] = CUMS[i][j-1] + CUMS[i][j]
+print(CUMS)
 for a, b, c, d in Q:
-    a_row = CUMS[a-2] if a != 1 else [0 for _ in range(w)]
-    c_row = CUMS[c-1]
-    a_row_column = a_row[b-1:d] if d != w else a_row[b-1:]
-    c_row_column = c_row[b-1:d] if d != w else c_row[b-1:]
-    print(sum(c_row_column) - sum(a_row_column))
+    print(CUMS[c][d] + CUMS[a-1][b-1] - CUMS[a][d-1] - CUMS[b-1][c])
