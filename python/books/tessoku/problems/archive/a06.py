@@ -1,11 +1,11 @@
 n, q = map(int, input().split())
 A = list(map(int, input().split()))
-LR = []
+Z = [0 for _ in range(n+2)]
+for i in range(1, n+1):
+    Z[i] = Z[i-1] + A[i-1]
+ans = []
 for _ in range(q):
     l, r = map(int, input().split())
-    LR.append((l, r))
-cums = [0]
-for i in range(n):
-    cums.append(cums[i] + A[i])
-for l, r in LR:
-    print(cums[r] - cums[l-1])
+    ans.append(Z[r] - Z[l-1])
+for a in ans:
+    print(a)
