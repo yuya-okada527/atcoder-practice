@@ -8,16 +8,13 @@ for _ in range(q):
 cums = [0]
 for i in range(n):
     cums.append(cums[i] + A[i])
-# print(cums)
-for j in range(q):
-    l, r = LR[j]
-    n_all = r - l + 1
+for l, r in LR:
+    num = r - l + 1
     n_win = cums[r] - cums[l-1]
-    n_lose = n_all - n_win
-    # print(n_all, n_win, n_lose)
-    if n_win > n_lose:
-        print("win")
-    elif n_win == n_lose:
+    n_lose = num - n_win
+    if n_win == n_lose:
         print("draw")
+    elif n_win > n_lose:
+        print("win")
     else:
         print("lose")
