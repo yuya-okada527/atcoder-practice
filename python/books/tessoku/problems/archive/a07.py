@@ -1,15 +1,12 @@
 d = int(input())
 n = int(input())
-diff = [0 for _ in range(d)]
+DIFF = [0 for _ in range(d+2)]
 for _ in range(n):
     l, r = map(int, input().split())
-    diff[l-1] += 1
-    if r != d: diff[r] -= 1
-cums = []
-for i in range(d):
-    if i == 0: cums.append(diff[0])
-    else: cums.append(cums[i-1] + diff[i])
-# print(diff)
-# print(cums)
-for c in cums:
-    print(c)
+    DIFF[l] += 1
+    DIFF[r+1] -= 1
+Z = [0 for _ in range(d+2)]
+for i in range(1, d+1):
+    Z[i] = Z[i-1] + DIFF[i]
+for i in Z[1:-1]:
+    print(i)
