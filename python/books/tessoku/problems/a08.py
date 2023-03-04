@@ -17,7 +17,6 @@ Q = []
 for _ in range(q):
     a, b, c, d = map(int, input().split())
     Q.append((a, b, c, d))
-# print(Z)
 for a, b, c, d in Q:
     ans = Z[c][d] - Z[a-1][d] - Z[c][b-1] + Z[a-1][b-1]
     print(ans)
