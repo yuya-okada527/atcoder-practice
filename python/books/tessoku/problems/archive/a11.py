@@ -1,11 +1,11 @@
 n, x = map(int, input().split())
 A = list(map(int, input().split()))
 
-l = 0
-r = n
-i = (r - l) // 2 + l
-while A[i] != x:
-    if A[i] > x: r = i
-    else: l = i
-    i = (r - l) // 2 + l
-print(i+1)
+left = 0
+right = n
+while left < right:
+    mid = (right - left) // 2 + left
+    if A[mid] == x: break
+    elif A[mid] > x: right = mid
+    else: left = mid
+print(mid+1)
