@@ -10,12 +10,11 @@ path = []
 point = n
 while True:
     path.append(point)
-    if DP[point] == DP[point-1] + A[point]:
+    if point == 1:
+        break
+    elif DP[point] == DP[point-1] + A[point]:
         point -= 1
     else:
         point -= 2
-    if point == 1:
-        path.append(point)
-        break
 print(len(path))
 print(*path[::-1], sep=" ")
