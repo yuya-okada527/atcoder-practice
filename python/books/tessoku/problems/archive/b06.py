@@ -1,16 +1,16 @@
 n = int(input())
-A = list(map(int, input().split()))
+A = [0] + list(map(int, input().split()))
+Z = [0 for _ in range(n+1)]
+for i in range(1, n+1):
+    Z[i] = Z[i-1] + A[i]
 q = int(input())
 LR = []
 for _ in range(q):
     l, r = map(int, input().split())
     LR.append((l, r))
-cums = [0]
-for i in range(n):
-    cums.append(cums[i] + A[i])
 for l, r in LR:
     num = r - l + 1
-    n_win = cums[r] - cums[l-1]
+    n_win = Z[r] - Z[l-1]
     n_lose = num - n_win
     if n_win == n_lose:
         print("draw")
