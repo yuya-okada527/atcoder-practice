@@ -1,19 +1,22 @@
-h, w = map(int, input().split())
-X = [[0 for _ in range(w+9)] for _ in range(h+9)]
-for i in range(1, h+1):
-    line = list(map(int, input().split()))
-    for j in range(1, w+1):
-        X[i][j] = line[j]
-q = int(input())
-Q = [list(map(int, input().split())) for _ in range(q)]
+from pprint import pprint as print
 
-CUMS = [[0 for _ in range(w+9)] for _ in range(h+9)]
+h, w = map(int, input().split())
+X = [[0 for _ in range(w+2)] for _ in range(h+2)]
+for i in range(1, h+1):
+    for j, x in enumerate(map(int, input().split()), start=1):
+        X[i][j] = x
+Z = [[0 for _ in range(w+2)] for _ in range(h+2)]
 for i in range(1, h+1):
     for j in range(1, w+1):
-        CUMS[i][j] = CUMS[i-1][j] + X[i][j]
+        Z[i][j] = Z[i-1][j] + X[i][j]
 for i in range(1, h+1):
     for j in range(1, w+1):
-        CUMS[i][j] = CUMS[i][j-1] + CUMS[i][j]
-print(CUMS)
+        Z[i][j] = Z[i][j-1] + Z[i][j]
+q = int(input())
+Q = []
+for _ in range(q):
+    a, b, c, d = map(int, input().split())
+    Q.append((a, b, c, d))
 for a, b, c, d in Q:
-    print(CUMS[c][d] + CUMS[a-1][b-1] - CUMS[a][d-1] - CUMS[b-1][c])
+    ans = Z[c][d] - Z[a-1][d] - Z[c][b-1] + Z[a-1][b-1]
+    print(ans)
