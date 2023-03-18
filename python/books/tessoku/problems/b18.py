@@ -1,5 +1,3 @@
-from pprint import pprint
-
 n, s = map(int, input().split())
 A = [0] + list(map(int, input().split()))
 DP = [[False for _ in range(s+1)] for _ in range(n+1)]
