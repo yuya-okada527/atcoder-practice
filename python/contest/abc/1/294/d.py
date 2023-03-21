@@ -28,18 +28,18 @@ class OrderedSet:
 
 
 n, q = map(int, input().split())
-lst = OrderedSet()
+oset = OrderedSet()
 i = 1
 ans = []
 for _ in range(q):
     event = input()
     if event.startswith("1"):
-        lst.add(i)
+        oset.add(i)
         i += 1
     elif event.startswith("2"):
         _, x = map(int, event.split())
-        lst.discard(x)
+        oset.discard(x)
     else:
-        ans.append(lst.first())
+        ans.append(oset.first())
 for a in ans:
     print(a)
