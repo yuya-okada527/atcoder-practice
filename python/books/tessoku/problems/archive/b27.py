@@ -3,7 +3,7 @@ def gcd(a, b):
     while True:
         a, b = b, a % b
         if a == 0 or b == 0: break
-    return max(a, b)
+    return a
 
 def lcm(a, b):
     return a * b // gcd(a, b)
