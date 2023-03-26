@@ -1,7 +1,7 @@
 n, k = map(int, input().split())
 A = list(map(int, input().split()))
-left = 1
-right = 10**9+1
+left = 0
+right = 10**9
 while left < right:
     mid = (left+right)//2
     num = sum(map(lambda x: mid//x, A))
