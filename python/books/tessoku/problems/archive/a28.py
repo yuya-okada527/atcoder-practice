@@ -1,13 +1,14 @@
 n = int(input())
+Q = [input().split() for _ in range(n)]
 ans = 0
-Q = []
-for _ in range(n):
-    t, a = input().split()
-    Q.append((t, a))
 for t, a in Q:
-    if t == "+": ans += int(a)
-    elif t == "-": ans -= int(a)
-    else: ans *= int(a)
+    a = int(a)
+    if t == "+":
+        ans += a
+    elif t == "*":
+        ans *= a
+    elif t == "-":
+        ans -= a
     if ans < 0: ans += 10000
     ans %= 10000
     print(ans)
