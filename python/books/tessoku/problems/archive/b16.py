@@ -1,11 +1,7 @@
 n = int(input())
 H = [0] + list(map(int, input().split()))
 DP = [0 for _ in range(n+1)]
-for j in range(1, n+1):
-    if j == 1: DP[j] = 0
-    elif j == 2: DP[j] = abs(H[j-1]-H[j])
-    else: DP[j] = min(
-        DP[j-1] + abs(H[j-1]-H[j]),
-        DP[j-2] + abs(H[j-2]-H[j])
-    )
+for i in range(2, n+1):
+    if i == 2: DP[i] = abs(H[i]-H[i-1])
+    else: DP[i] = min(DP[i-1]+abs(H[i]-H[i-1]), DP[i-2]+abs(H[i]-H[i-2]))
 print(DP[-1])
