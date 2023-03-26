@@ -3,7 +3,7 @@ def gcd(a, b):
     while True:
         a, b = b, a % b
         if a == 0 or b == 0: break
-    return max(a, b)
+    return a
 
 a, b = map(int, input().split())
 print(gcd(a, b))
