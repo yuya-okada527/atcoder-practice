@@ -12,9 +12,9 @@ for l, r in LR:
     num = r - l + 1
     n_win = Z[r] - Z[l-1]
     n_lose = num - n_win
-    if n_win == n_lose:
-        print("draw")
-    elif n_win > n_lose:
+    if n_win > n_lose:
         print("win")
-    else:
+    elif n_win < n_lose:
         print("lose")
+    else:
+        print("draw")
