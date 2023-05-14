@@ -27,20 +27,20 @@ def shift_horizontaly(a):
 
 def judge(a, b):
     for i in range(h):
-        # print(f"{i=}")
+        print(f"{i=}")
         copy_a = deepcopy(a)
         while True:
             if i == 0: break
             copy_a = shift_verticaly(copy_a)
             i -= 1
         for j in range(w):
-            # print(f"{j=}")
+            print(f"{j=}")
             copy_a2 = deepcopy(copy_a)
             while True:
                 if j == 0: break
                 copy_a2 = shift_horizontaly(copy_a2)
                 j -= 1
-            # pp(copy_a2)
+            pp(copy_a2)
             if is_same(copy_a2, b):
                 return True
     return False
