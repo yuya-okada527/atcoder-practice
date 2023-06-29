@@ -1,4 +1,4 @@
 commit_all:
 	git add .
-	git commit -m "commit all"
+	aicommits
 	git push origin head
