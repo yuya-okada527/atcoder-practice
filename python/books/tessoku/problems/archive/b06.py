@@ -10,11 +10,11 @@ for _ in range(q):
     LR.append((l, r))
 for l, r in LR:
     num = r - l + 1
-    n_win = Z[r] - Z[l-1]
-    n_lose = num - n_win
-    if n_win > n_lose:
-        print("win")
-    elif n_win < n_lose:
-        print("lose")
-    else:
+    win = Z[r] - Z[l-1]
+    lose = num - win
+    if win == lose:
         print("draw")
+    elif win > lose:
+        print("win")
+    else:
+        print("lose")
