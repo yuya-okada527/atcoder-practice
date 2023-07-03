@@ -1,19 +1,20 @@
-SIZE = 1502
+from pprint import pprint
 
+SIZE = 1509
+SPACE = [[0 for _ in range(SIZE+1)] for _ in range(SIZE+1)]
 n = int(input())
-XY = [[0 for _ in range(SIZE)] for _ in range(SIZE)]
 for _ in range(n):
     x, y = map(int, input().split())
-    XY[x][y] += 1
-Z = [[0 for _ in range(SIZE)] for _ in range(SIZE)]
-for i in range(1, SIZE-1):
-    for j in range(1, SIZE-1):
-        Z[i][j] = Z[i-1][j] + XY[i][j]
-for i in range(1, SIZE-1):
-    for j in range(1, SIZE-1):
+    SPACE[y][x] += 1
+Z = [[0 for _ in range(SIZE+1)] for _ in range(SIZE+1)]
+for i in range(SIZE+1):
+    for j in range(SIZE+1):
+        Z[i][j] = Z[i-1][j] + SPACE[i][j]
+for i in range(SIZE+1):
+    for j in range(SIZE+1):
         Z[i][j] = Z[i][j-1] + Z[i][j]
 q = int(input())
-Q = [map(int, input().split()) for _ in range(q)]
-for a, b, c, d in Q:
-    ans = Z[c][d] - Z[a-1][d] - Z[c][b-1] + Z[a-1][b-1]
+for _ in range(q):
+    a, b, c, d = map(int, input().split())
+    ans = Z[d][c] - Z[d][a-1] - Z[b-1][c] + Z[b-1][a-1]
     print(ans)
