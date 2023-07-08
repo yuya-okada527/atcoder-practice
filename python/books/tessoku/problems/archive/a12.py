@@ -1,10 +1,10 @@
 n, k = map(int, input().split())
 A = list(map(int, input().split()))
-left = 0
-right = 10**9
-while left < right:
-    mid = (left+right)//2
-    num = sum(map(lambda x: mid//x, A))
-    if num >= k: right = mid
-    else: left = mid + 1
-print(left)
+l = 1
+r = 10**9+9
+while l < r:
+    m = (l+r)//2
+    p = sum(map(lambda x: m//x, A))
+    if p >= k: r = m
+    else: l = m + 1
+print(l)
