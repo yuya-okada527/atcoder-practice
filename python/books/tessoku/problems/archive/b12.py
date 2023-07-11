@@ -1,10 +1,10 @@
 n = int(input())
-left = 0
-right = 10**3
-for _ in range(100):
-    mid = (left+right)/2
-    ans = mid**3+mid
-    if ans == n: break
-    elif ans > n: right = mid
-    else: left = mid
-print(mid)
+l = 0
+r = 100
+while l < r:
+    m = (l+r)/2
+    p = m**3+m
+    if abs(n-p) <= 0.001: break
+    if p < n: l = m
+    else: r = m
+print(m)
