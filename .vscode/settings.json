@@ -1,6 +1,7 @@
 {
   "[python]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "[ruby]": {
     "editor.tabSize": 2
@@ -9,5 +10,6 @@
   "editor.renderWhitespace": "all",
   "editor.wordWrap": "on",
   "files.insertFinalNewline": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "python.formatting.provider": "none"
 }
