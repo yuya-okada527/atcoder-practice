@@ -1,4 +1,4 @@
 ca:
 	git add .
-	aicommits
+	git commit -m "update"
 	git push origin head
