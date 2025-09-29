@@ -7,3 +7,6 @@ AtCoder のレートアップのための練習用リポジトリ
 - Python
 - Ruby
 - Rust
+- go
+- TypeScript
+- Java
