@@ -7,15 +7,16 @@ import (
 func main() {
 	var x string
 	fmt.Scan(&x)
-	if x == "A" {
+	switch x {
+	case "A":
 		fmt.Println(1)
-	} else if x == "B" {
+	case "B":
 		fmt.Println(2)
-	} else if x == "C" {
+	case "C":
 		fmt.Println(3)
-	} else if x == "D" {
+	case "D":
 		fmt.Println(4)
-	} else if x == "E" {
+	case "E":
 		fmt.Println(5)
 	}
 }
